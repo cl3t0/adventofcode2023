@@ -30,10 +30,10 @@ def splitBalls(round: String): List[String] =
 
 def getBallQuantity(ballString: String): BallN =
   ballString match
-    case s"$n red"   => BallN(n.strip.toInt, 0, 0)
-    case s"$n green" => BallN(0, n.strip.toInt, 0)
-    case s"$n blue"  => BallN(0, 0, n.strip.toInt)
-    case _           => BallN(0, 0, 0)
+    case s"$n red"   => BallN(red = n.strip.toInt)
+    case s"$n green" => BallN(green = n.strip.toInt)
+    case s"$n blue"  => BallN(blue = n.strip.toInt)
+    case _           => BallN()
 
 def minimumBallQuantity(game: String): BallN =
   splitRounds(game)
